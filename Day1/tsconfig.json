@@ -1,0 +1,5 @@
+{
+  //NOTE - 컴파일러 동작 설명
+  "files": [],
+  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
+}
