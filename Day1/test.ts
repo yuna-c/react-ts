@@ -219,3 +219,47 @@ function error(message: string): never {
 
 const never: [] = []
 never.push(3) // Error
+
+/*************************************************************/
+//NOTE - Type alias(타입 별칭) vs interface (인터페이스)
+// Type alias
+type ExampleType = {}
+type StringType = string
+type UnionType = string | number
+
+// interface
+
+interface ExampleInterface {
+  example: string
+}
+
+/*
+- TS Documents
+https://stackoverflow.com/questions/37233735/interfaces-vs-types-in-typescript/52682220#52682220
+타입 별칭(type alias)과 인터페이스(interface)는 매우 유사하며, 많은 경우 자유롭게 선택할 수 있습니다. 인터페이스의 거의 모든 기능이 타입에서 사용할 수 있으며, 주요 차이점은 타입은 새로운 속성을 추가하기 위해 다시 열 수 없지만 인터페이스는 항상 확장 가능하다는 점입니다.
+*/
+
+//NOTE -  확장성(Extensibility):
+// 인터페이스(interface): 재선언 가능, 두개 합쳐짐, 객체 형태
+interface Hello {
+  name: string
+}
+
+interface Hello {
+  age: number
+} // ✅ 가능, Hello 는 name 과 age 모두를 포함하게 됨
+
+let hello: Hello = {
+  name: 'string',
+  age: 1
+}
+
+// 타입 별칭(type alias): 두번 선언 불가능, 객체 형태 뿐만 아니라, 유니온 타입, 튜플, 매핑된 타입 등 복잡한 타입 표현에 유리
+// ex type A = B | C
+type Hello2 = {
+  name: string
+}
+
+type Hello2 = {
+  age: number
+} // 🙅‍♂️ 불가능
