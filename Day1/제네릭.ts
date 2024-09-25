@@ -23,8 +23,8 @@ function printAnything<T>(arr: T[]): void {
   }
 }
 
-printAnything(['a', 'b', 'c']) // <string>을 써주지 않아도 타입 추론이 가능
-printAnything([1, 2, 3]) // <number>를 써주지 않아도 타입 추론이 가능
+printAnything<string>(['a', 'b', 'c']) // <string>을 써주지 않아도 타입 추론이 가능
+printAnything<number>([1, 2, 3]) // <number>를 써주지 않아도 타입 추론이 가능
 
 //NOTE - useState 에서 사용하기
 import { useState } from 'react'
