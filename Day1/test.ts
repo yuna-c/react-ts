@@ -278,3 +278,32 @@ let p1: Person = { name: 'Alice', age: 25 }
 let p2 = { name: 'Bob', age: 30 }
 
 p1 = p2 // 성공: p2는 Person과 동일한 구조를 가짐
+
+/*************************************************************/
+//NOTE - 타입 어노테이션 (type annotation)
+// : 사용하려고 하는 변수, 함수 등 옆에: 기호와 함께 우리가 배운 선언 가능한 타입을 넣어주기
+// : 어떤 값이 어떤 타입을 참조하고 있는지 개발자가 직접 타입을 작성해서 타입스크립트에게 알려주는 행동
+
+let name: string = 'Owen'
+let age: number = 30
+let isMarried: boolean = false
+
+// built in object
+let now: Date = new Date()
+
+// array
+let animals: string[] = ['cat', 'dog', 'cow']
+
+// object literal
+let point: { x: number; y: number } = {
+  x: 10,
+  y: 20
+}
+
+// function
+const logNumber: (i: number) => void = (i: number) => {
+  console.log(i)
+}
+
+let haveNothing: null = null
+let nothing: undefined = undefined
