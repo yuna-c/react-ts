@@ -7,7 +7,8 @@ function App() {
 
 //TODO - props: 함수 인자 첫번째에 객체 형태로 타입 지정
 // 함수 TodoList의 첫 번째 매개변수인 props에 대해 객체 구조로 타입을 지정하여 사용
-function TodoList({ todoList }: { todoList: Todo[] }) {
+type TodoListProps = { todoList: Todo[] }
+function TodoList({ todoList }: TodoListProps) {
   return (
     <>
       {todoList.map((todo) => (
@@ -18,7 +19,8 @@ function TodoList({ todoList }: { todoList: Todo[] }) {
 }
 
 // TodoItem 컴포넌트는 todo 객체의 속성들을 받아서 렌더링
-function TodoItem({ id, title, completed }: Todo) {
+type TodoItemProps = Todo
+function TodoItem({ id, title, completed }: TodoItemProps) {
   return (
     <div>
       <div>{id}</div> // todo의 id를 표시
