@@ -347,3 +347,45 @@ let numbers = [1, 2, 3, 4, 5]
 numbers.forEach((num) => {
   console.log(num) // num은 number로 추론
 })
+
+//NOTE - 왜 타입 어노테이션을 해야 할까?
+// : 항상 타입 추론이 일어나는데 어떨때 타입 어노테이션을 해야 할까
+// : 암묵적 타입 추론에 의존하게 되면 타입스크립트의 특징인 안전한 코드 작성 멀어짐
+// number
+const add = (a: number, b: number): number => {
+  return a + b
+}
+const subtract = (a: number, b: number) => {
+  // subtract의 타입은 (a, b) => void
+  a - b
+}
+
+// 1. 함수가 any 타입을 리턴하고 이 값을 명확하게 해야 할 때
+// 2. 어떤 변수를 선언한 이후에 다른 라인에서 초기화를 할 때
+// 3. 추론할 수 없는 타입을 변수가 가지게 하려 할 때
+
+// 1.
+const json = '{"a": 1, "b": 2}'
+const object = JSON.parse(json) // any 타입으로 인식 -> 타입 어노테이션 필요
+console.log(object) // {a: 1, b: 2}
+
+const object: { a: number; b: number } = JSON.parse(json) // 명시적
+object.asdadsfgsdasdasdasd // 타입스크립트는 object를 any 타입으로 인식해서 이러한 에러를 찾지 못함(여기서 에러)
+
+// 2.
+const colors = ['red', 'blue', 'green']
+let foundColor // 암묵적으로 any 타입을 가짐 -> 타입 어노테이션 필요
+let foundColor: boolean
+
+for (let i = 0; i < colors.length; i++) {
+  if (colors[i] === 'blue') foundColor = true
+}
+
+// 3.
+let numbers = [-10, -5, 10]
+let numberAboveZero = false // boolean 타입으로 타입 추론 -> 타입 어노테이션 필요 boolean | number
+let numberAboveZero: boolean | number = false // 오류 사라짐
+
+for (let i = 0; i < colors.length; i++) {
+  if (numbers[i] > 0) numberAboveZero = numbers[i] // error
+}
