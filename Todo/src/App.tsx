@@ -10,7 +10,25 @@ function App() {
     getTodos().then((data) => setTodoList(data))
   }, [])
 
-  return <TodoList todoList={todoList} /> // 빈 todoList 배열을 TodoList 컴포넌트에 전달
+  const [title, setTitle] = useState('') // string
+
+  const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault()
+    console.log(e.target.value)
+    setTitle(e.target.value) // 세터 함수
+    console.log(title)
+  }
+
+  return (
+    <div id="wrap">
+      {/* 빈 todoList 배열을 TodoList 컴포넌트에 전달 */}
+      <TodoList todoList={todoList} />
+
+      {/* 입력 */}
+      {/* <input type="text" onChange={(e) => {}} /> : 가짜 함수 만들어서 호버하면 타입이 나오는거 복붙*/}
+      <input type="text" value={title} onChange={handleTitleChange} />
+    </div>
+  )
 }
 
 //TODO - props: 함수 인자 첫번째에 객체 형태로 타입 지정
@@ -21,7 +39,7 @@ function TodoList({ todoList }: TodoListProps) {
     <>
       {todoList.map((todo) => (
         // todoList 배열을 순회하며 각 요소(todo)를 TodoItem 컴포넌트에 props로 전달
-        <TodoItem {...todo} />
+        <TodoItem key={todo.id} {...todo} />
       ))}
     </>
   )
