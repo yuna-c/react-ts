@@ -3,15 +3,17 @@
   "compilerOptions": {
     "composite": true,
     "tsBuildInfoFile": ".tsbuildinfo",
-    "target": "ES2020", //NOTE - 변환할 ECMAScript 버전
+    "target": "ES6", // 변환할 ECMAScript 버전 ES2020
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext", //NOTE - 모듈 시스템을 지정
-    "skipLibCheck": true,
+    // 모듈 시스템을 지정
+    "module": "CommonJS", // ESNext CommonJS
 
     /* Bundler mode */
     //NOTE - 어떤 모드를 사용할 지(js 변경시)
-    "moduleResolution": "bundler",
+    "moduleResolution": "node", // 'bundler'
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
@@ -20,7 +22,7 @@
 
     /* Linting */
     //NOTE - 오류
-    "strict": true, //NOTE - 모든 엄격 모드를 활성화
+    "strict": true, // - 모든 엄격 모드를 활성화
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
