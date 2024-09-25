@@ -263,3 +263,18 @@ type Hello2 = {
 type Hello2 = {
   age: number
 } // 🙅‍♂️ 불가능
+
+/*************************************************************/
+
+//NOTE - 구조적 타입 시스템 : TypeScript
+// 어떤 프로퍼티와 메서드를 가지고 있는지, 속성이 같은지
+// 구조적 타입 시스템에서는 두 개체가 동일한 구조를 가지면 동일한 타입으로 간주
+interface Person {
+  name: string
+  age: number
+}
+
+let p1: Person = { name: 'Alice', age: 25 }
+let p2 = { name: 'Bob', age: 30 }
+
+p1 = p2 // 성공: p2는 Person과 동일한 구조를 가짐
