@@ -141,3 +141,81 @@ let noneFunc: () => void
 noneFunc = function () {
   console.log('hihi')
 }
+
+/*************************************************************/
+
+//NOTE - 읽기 전용 : readonly : 수정 불가
+let arrA: readonly number[] = [1, 2, 3, 4]
+let arrB: ReadonlyArray<number> = [2, 4, 6, 8]
+arrA.push(a)
+const newArr = { ...arrA, arrB }
+
+//NOTE - 튜플 : Tuple : 길이와 값이 어느정도 정해진 배열
+let tuple: [string, number]
+tuple = ['a', 1]
+tuple = [1, 'a'] // Error
+
+let userA: [number, string, boolean] = [1234, 'juyoung', true]
+
+let usersA: [number, string, boolean][]
+let usersB: Array<[number, string, boolean]>
+usersA = [
+  [1, 'chisus', true],
+  [2, 'jisu', false]
+]
+
+let tupleA: [1, number]
+tupleA = [1, 2]
+tupleA = [2, 3] // Error
+
+let a: readonly [string, number] = ['rest', 123]
+a[0] = 'work' // Error
+
+//NOTE - 열거형 : enum : 여러 값을 소 카테고리로 타입으로 표현
+// 숫자 변환 01234
+enum Week {
+  Sun,
+  Mon,
+  Tue,
+  Wed,
+  Thu,
+  Fri,
+  Sat
+}
+
+// 문자
+enum Color {
+  Red = 'red',
+  Green = 'green',
+  Blue = 'blue'
+}
+
+//NOTE - 객체 : object : Array, function타입
+let obj: object = {}
+let arr: object = []
+let func: object = function () {}
+let date: object = new Date()
+
+interface Users {
+  name: string
+  age: number
+}
+
+let userA: Users = {
+  name: 'juyoung',
+  age: 27
+}
+
+//NOTE - 알 수 없는 타입 : unknown : 전체 집합
+let u: unknown = 123
+let test1: number = u // Error
+let test2: number = u as number
+let test3: any = u
+
+//NOTE - Never : unknown의 반대 : 공 집합
+function error(message: string): never {
+  throw new Error(message)
+}
+
+const never: [] = []
+never.push(3) // Error
