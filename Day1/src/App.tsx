@@ -5,8 +5,8 @@ import Hello from './components/Hello'
 function App() {
   return (
     <>
-      <Hello name="Typescript" />
-      <Bye name="꺼져진짜"></Bye>
+      <Hello name="Typescript"></Hello>
+      <Bye name="Typescript"></Bye>
     </>
   )
 }
