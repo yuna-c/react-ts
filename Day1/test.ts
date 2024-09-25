@@ -81,7 +81,7 @@ let userArr: User[] = [
   }
 ]
 
-//NOTE - Null과 Undefined
+//NOTE - Null과 Undefined : 초기값이 없다가 들어올 때
 let undefin: undefined = undefined
 let nul: null = null
 
@@ -96,7 +96,7 @@ any = null
 
 const arr: any[] = [1, true, 'typescript']
 
-//NOTE - void
+//NOTE - void(공허하다) : 특정 함수가 리턴값이 없을때
 function coding(msg: string): void {
   console.log(`Happy ${msg}`)
 }
@@ -130,12 +130,14 @@ const testCase2: User & Validation = {
 
 //NOTE - 함수(Function)
 let myFunc: (arg1: number, arg2: number) => number
+// (인자: 타입) 반환값 타입
 myFunc = function (x, y) {
   return x + y
 }
 myFunc(1, 2) // 3
 
 let noneFunc: () => void
+// 반환하지 않는 타입
 noneFunc = function () {
   console.log('hihi')
 }
