@@ -307,3 +307,43 @@ const logNumber: (i: number) => void = (i: number) => {
 
 let haveNothing: null = null
 let nothing: undefined = undefined
+
+//NOTE - 타입 추론
+// : 코드에서 타입을 명시적으로 지정하지 않아도, 컴파일러가 코드의 문맥을 통해 타입을 자동으로 추론
+// : 명시적인 타입 선언 없이도 타입 안전성을 유지
+// : 변수, 함수, 객체, 배열 등 다양한 상황에서 동작하고, 제네릭 타입도 추론, 코드의 가독성과 유지 보수성
+
+// 변수의 타입 추론
+let num = 10 // number로 추론
+let str = 'Hello' // string으로 추론
+let bool = true // boolean으로 추론
+
+// 배열의 타입 추론
+let numbers = [1, 2, 3, 4, 5] // number[]로 추론
+let strings = ['a', 'b', 'c'] // string[]로 추론
+
+// 객체 리터럴의 타입 추론
+let person = {
+  name: 'Alice',
+  age: 25
+} // { name: string; age: number }로 추론
+
+person.name = 'Bob' // 정상
+person.age = 30 // 정상
+person.age = 'thirty' // 오류: 'string' 형식은 'number' 형식에 할당할 수 없습니다.
+
+// 함수 반환 타입 추론
+function add(a: number, b: number) {
+  return a + b // number로 추론
+}
+
+const result = add(5, 3) // result는 number로 추론
+
+// 컨텍스트를 통한 타입 추론
+// 함수 매개변수와 반환 타입
+let add = (a: number, b: number) => a + b // (a: number, b: number) => number로 추론
+// 콜백 함수의 타입 추론
+let numbers = [1, 2, 3, 4, 5]
+numbers.forEach((num) => {
+  console.log(num) // num은 number로 추론
+})
