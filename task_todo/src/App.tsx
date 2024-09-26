@@ -14,9 +14,14 @@ function App() {
     fetchTodos()
   }, [])
 
+  //SECTION - 2. POST(create) 투두리스트 추가하기
+  const handleAddTodo = (newTodo: Todo) => {
+    setTodoList((prev) => [...prev, newTodo])
+  }
+
   return (
     <>
-      <TodoForm />
+      <TodoForm onAddTodo={handleAddTodo} />
       <TodoList todoList={todoList} />
     </>
   )
@@ -51,11 +56,37 @@ function TodoItem({ id, title, completed }: TodoListItemProps) {
 }
 
 //NOTE - 새로운 Todo를 추가하는 입력 폼 컴포넌트
-type TodoFormProps = {}
-function TodoForm() {
+type TodoFormProps = { onAddTodo: (newTodo: Todo) => void }
+function TodoForm({ onAddTodo }: TodoFormProps) {
+  const [title, setTitle] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    if (title === '') return
+
+    const newTodo: Todo = {
+      id: crypto.randomUUID(),
+      title,
+      completed: false
+    }
+
+    await fetch(`http://localhost:4000/todos`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newTodo)
+    })
+
+    // 새 Todo 상위 컴포넌트에 전달
+    onAddTodo(newTodo)
+    setTitle('')
+  }
+
   return (
-    <form>
-      <input type="text" />
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={title} placeholder="새 Todo 입력" onChange={(e) => setTitle(e.target.value)} />
       <button type="submit" style={{ padding: '0.1em 0.5em', backgroundColor: '#000000a1', color: '#fff' }}>
         추가하기
       </button>
