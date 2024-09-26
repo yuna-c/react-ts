@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { getTodos, type Todo } from './service'
 import './App.css'
 
+type ToggleTodo = Omit<Todo, 'title'>
+
 function App() {
   //SECTION - 1. READ(get) 투두리스트 가져오기
   const [todoList, setTodoList] = useState<Todo[]>([])
@@ -27,10 +29,32 @@ function App() {
     setTodoList((prev) => prev.filter((todo) => todo.id !== id))
   }
 
+  //SECTION - 4. PATCH(update) 투두리스트 업데이트
+  const handleUpdateTodo = async ({ id, completed }: ToggleTodo) => {
+    await fetch(`http://localhost:4000/todos/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        completed: !completed
+      })
+    })
+
+    setTodoList((prev) =>
+      prev.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            completed: !completed
+          }
+        }
+        return todo
+      })
+    )
+  }
+
   return (
     <>
       <TodoForm onAddTodo={handleAddTodo} />
-      <TodoList todoList={todoList} onDeleteTodo={handleDeleteTodo} />
+      <TodoList todoList={todoList} onDeleteTodo={handleDeleteTodo} onUpdateTodo={handleUpdateTodo} />
     </>
   )
 }
@@ -39,12 +63,13 @@ function App() {
 type TodoListProps = {
   todoList: Todo[]
   onDeleteTodo: (id: Todo['id']) => void
+  onUpdateTodo: (toggleTodo: ToggleTodo) => void
 }
-function TodoList({ todoList, onDeleteTodo }: TodoListProps) {
+function TodoList({ todoList, onDeleteTodo, onUpdateTodo }: TodoListProps) {
   return (
     <ul>
       {todoList.map((todo) => (
-        <TodoItem key={todo.id} {...todo} onDeleteTodo={onDeleteTodo} />
+        <TodoItem key={todo.id} {...todo} onDeleteTodo={onDeleteTodo} onUpdateTodo={onUpdateTodo} />
       ))}
     </ul>
   )
@@ -53,14 +78,22 @@ function TodoList({ todoList, onDeleteTodo }: TodoListProps) {
 //NOTE - 각 Todo 항목을 렌더링하는 컴포넌트
 type TodoListItemProps = Todo & {
   onDeleteTodo: (id: Todo['id']) => void
+  onUpdateTodo: (toggleTodo: ToggleTodo) => void
 }
-function TodoItem({ id, title, completed, onDeleteTodo }: TodoListItemProps) {
+function TodoItem({ id, title, completed, onDeleteTodo, onUpdateTodo }: TodoListItemProps) {
   return (
     <>
       <li style={{ margin: '10px', display: 'flex' }}>
-        {title}
+        <span style={{ textDecoration: completed ? 'line-through' : 'none' }}>{title}</span>
         <span style={{ display: 'flex', gap: '10px' }}>
-          <button style={{ padding: '0.1em 0.5em', backgroundColor: '#438dee', color: '#fff' }}>완료</button>
+          <button
+            onClick={() => {
+              onUpdateTodo({ id, completed })
+            }}
+            style={{ padding: '0.1em 0.5em', backgroundColor: '#438dee', color: '#fff' }}
+          >
+            완료
+          </button>
           <button onClick={() => onDeleteTodo(id)} style={{ padding: '0.1em 0.5em', backgroundColor: '#eb2020', color: '#fff' }}>
             삭제
           </button>

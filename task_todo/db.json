@@ -1,11 +1,6 @@
 {
   "todos": [
     {
-      "id": "fddc33d3-ac34-4315-8a2a-52e5eaf9c5f6",
-      "title": "보라돌이",
-      "completed": true
-    },
-    {
       "id": "7b799895-f87c-4866-9b0c-14ec4663197a",
       "title": "뚜비",
       "completed": false
@@ -13,7 +8,7 @@
     {
       "id": "ac74a752-5078-458c-93dd-1b0b22b0e2be",
       "title": "나나",
-      "completed": false
+      "completed": true
     },
     {
       "id": "88b60f1e-d873-4965-946e-32bb7d881892",
@@ -21,13 +16,8 @@
       "completed": false
     },
     {
-      "id": "73244933-2e01-4229-83c9-bd10f9480488",
-      "title": "하루",
-      "completed": true
-    },
-    {
-      "id": "9171b442-cb20-429f-9aa9-e512fabf5135",
-      "title": "되세요",
+      "id": "a069abaa-531b-4ee3-91fb-9c1daf05d93e",
+      "title": "보라돌이",
       "completed": false
     }
   ]
