@@ -19,6 +19,16 @@
       "id": "88b60f1e-d873-4965-946e-32bb7d881892",
       "title": "뽀",
       "completed": false
+    },
+    {
+      "id": "73244933-2e01-4229-83c9-bd10f9480488",
+      "title": "하루",
+      "completed": true
+    },
+    {
+      "id": "9171b442-cb20-429f-9aa9-e512fabf5135",
+      "title": "되세요",
+      "completed": false
     }
   ]
 }

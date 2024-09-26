@@ -8,8 +8,12 @@ function App() {
   //SECTION - 3. 비동기적으로 Todo 불러오는 로직
   const [todoList, setTodoList] = useState<Todo[]>([])
 
+  //SECTION - 7. 페이지네이션
+  const [currentPage, setCurrentPage] = useState(1) // 현재 페이지 상태 관리
+  const itemsPerPage = 4 // 한 페이지에 4개씩 보여줌
+
   useEffect(() => {
-    getTodos().then((data) => setTodoList(data))
+    getTodos().then((data) => setTodoList(data.data))
   }, [])
 
   //SECTION - 4. create Todo 항목 추가 기능 구현
@@ -67,10 +71,18 @@ function App() {
     )
   }
 
+  // 현재 페이지에 해당하는 Todo 항목들만 필터링
+  const indexOfLastTodo = currentPage * itemsPerPage
+  const indexOfFirstTodo = indexOfLastTodo - itemsPerPage
+  const currentTodos = todoList.slice(indexOfFirstTodo, indexOfLastTodo)
+
+  // 총 페이지 수 계산
+  const totalPages = Math.ceil(todoList.length / itemsPerPage)
+
   return (
     <div id="wrap">
       {/* 빈 todoList 배열을 TodoList[] 컴포넌트에 전달 */}
-      <TodoList todoList={todoList} onDeleteClick={handleDeleteTodo} onToggleClick={handleToggleTodo} />
+      <TodoList todoList={currentTodos} onDeleteClick={handleDeleteTodo} onToggleClick={handleToggleTodo} />
 
       {/* 입력 */}
       {/* <input type="text" onChange={(e) => {}} /> : 가짜 함수 만들어서 호버하면 타입이 나오는거 복붙 */}
@@ -81,6 +93,19 @@ function App() {
         onChange={handleTitleChange}
       />
       <button onClick={handleAddTodo}>등록</button>
+
+      {/* 페이지네이션 버튼 */}
+      <div style={{ marginTop: '20px' }}>
+        <button onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
+          이전
+        </button>
+        <span style={{ margin: '0 10px' }}>
+          {currentPage} / {totalPages}
+        </span>
+        <button onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>
+          다음
+        </button>
+      </div>
     </div>
   )
 }

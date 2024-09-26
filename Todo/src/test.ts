@@ -30,12 +30,24 @@ export type Todo = {
   completed: boolean
 }
 
+//NOTE - generic : wrapper type들은 백엔드랑 같이 써야 하니까
+export type Paginate<T> = {
+  data: T[] //Todo[]
+  first: number
+  items: number
+  last: number
+  next: number | null
+  pages: number
+  prev: number | null
+}
+
 // 어노테이션 : 속성, 설명 부여
 /*************************************************************/
 //NOTE - 1
 export async function getTodos() {
-  const res = await fetch('http://localhost:4000/todos')
-  const data: Todo[] = await res.json()
+  const res = await fetch('http://localhost:4000/todos?_page=1&_per_page=25')
+  // const data: Todo[] = await res.json()
+  const data: Paginate<Todo> = await res.json()
   return data
 }
 
