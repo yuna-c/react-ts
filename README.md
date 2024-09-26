@@ -55,3 +55,15 @@ export default tseslint.config({
   [react, typescript]
 - npm install
 - npm run dev
+
+# next.js
+
+- [@next.js](https://nextjs.org/docs/getting-started/installation)
+- npx create-next-app@latest
+
+- TypeScript : Y
+- ESLint : Y
+- Tailwind CSS : Y
+- `/src` directory : Y
+- **App Router : Y**
+- import alias : N
