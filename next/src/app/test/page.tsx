@@ -4,7 +4,7 @@
 export default function page() {
   return (
     <div className="page">
-      <h1>TestPage</h1>
+      <h1 className="text-4xl font-bold text-red-600">TestPage</h1>
       <div>Hello Next</div>
     </div>
   )
