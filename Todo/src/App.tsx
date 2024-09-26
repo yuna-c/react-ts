@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { getTodos, type Todo } from './test'
 import './App.css'
 
+type ToggleTodo = Omit<Todo, 'title'>
+
 function App() {
   //SECTION - 3. 비동기적으로 Todo 불러오는 로직
   const [todoList, setTodoList] = useState<Todo[]>([])
@@ -41,10 +43,34 @@ function App() {
     setTodoList((prev) => prev.filter((todo) => todo.id !== id))
   }
 
+  //SECTION - 6. update Todo 항목 업데이트 기능 구현
+  // (id: Todo['id'], completed: boolean)
+  // ({ id, completed }: Omit<Todo, 'title'>)
+  // type ToggleTodo = Omit<Todo, 'title'>
+  const handleToggleTodo = async ({ id, completed }: ToggleTodo) => {
+    await fetch(`http://localhost:4000/todos/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        completed: !completed
+      })
+    })
+    setTodoList((prev) =>
+      prev.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            completed: !completed
+          }
+        }
+        return todo
+      })
+    )
+  }
+
   return (
     <div id="wrap">
       {/* 빈 todoList 배열을 TodoList[] 컴포넌트에 전달 */}
-      <TodoList todoList={todoList} onDeleteClick={handleDeleteTodo} />
+      <TodoList todoList={todoList} onDeleteClick={handleDeleteTodo} onToggleClick={handleToggleTodo} />
 
       {/* 입력 */}
       {/* <input type="text" onChange={(e) => {}} /> : 가짜 함수 만들어서 호버하면 타입이 나오는거 복붙 */}
@@ -64,13 +90,14 @@ function App() {
 type TodoListProps = {
   todoList: Todo[]
   onDeleteClick: (id: Todo['id']) => void
+  onToggleClick: (toggleTodo: ToggleTodo) => void
 }
-function TodoList({ todoList, onDeleteClick }: TodoListProps) {
+function TodoList({ todoList, onDeleteClick, onToggleClick }: TodoListProps) {
   return (
     <div>
       {todoList.map((todo) => (
         // todoList 배열을 순회하며 각 요소(todo)를 TodoItem 컴포넌트에 props로 전달
-        <TodoItem key={todo.id} {...todo} onDeleteClick={onDeleteClick} />
+        <TodoItem key={todo.id} {...todo} onDeleteClick={onDeleteClick} onToggleClick={onToggleClick} />
       ))}
     </div>
   )
@@ -80,13 +107,23 @@ function TodoList({ todoList, onDeleteClick }: TodoListProps) {
 type TodoItemProps = Todo & {
   //TODO - 함수 타입 추가
   onDeleteClick: (id: Todo['id']) => void
+  onToggleClick: (toggleTodo: ToggleTodo) => void
 }
-function TodoItem({ id, title, completed, onDeleteClick }: TodoItemProps) {
+function TodoItem({ id, title, completed, onDeleteClick, onToggleClick }: TodoItemProps) {
   return (
     <div style={{ borderBottom: '1px solid #ddd', marginBottom: '10px', paddingBottom: '10px' }}>
       <div>id: {id}</div>
       {/* todo의 id를 표시 */}
-      <div>title: {title}</div>
+      <div
+        onClick={() => {
+          onToggleClick({
+            id,
+            completed
+          })
+        }}
+      >
+        title: {title}
+      </div>
       {/* todo의 제목을 표시 */}
       <div>completed : {`${completed}`}</div>
       {/* todo의 완료 여부를 표시 boolean이라 표기가 안되어서 string으로 만들어 줘야함 */}
