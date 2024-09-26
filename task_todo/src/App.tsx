@@ -19,36 +19,51 @@ function App() {
     setTodoList((prev) => [...prev, newTodo])
   }
 
+  //SECTION - 3. DELETE(delete) 투두리스트 삭제하기
+  const handleDeleteTodo = async (id: Todo['id']) => {
+    await fetch(`http://localhost:4000/todos/${id}`, {
+      method: 'DELETE'
+    })
+    setTodoList((prev) => prev.filter((todo) => todo.id !== id))
+  }
+
   return (
     <>
       <TodoForm onAddTodo={handleAddTodo} />
-      <TodoList todoList={todoList} />
+      <TodoList todoList={todoList} onDeleteTodo={handleDeleteTodo} />
     </>
   )
 }
 
 //NOTE - Todo 리스트 렌더링 컴포넌트
-type TodoListProps = { todoList: Todo[] }
-function TodoList({ todoList }: TodoListProps) {
+type TodoListProps = {
+  todoList: Todo[]
+  onDeleteTodo: (id: Todo['id']) => void
+}
+function TodoList({ todoList, onDeleteTodo }: TodoListProps) {
   return (
     <ul>
       {todoList.map((todo) => (
-        <TodoItem key={todo.id} {...todo} />
+        <TodoItem key={todo.id} {...todo} onDeleteTodo={onDeleteTodo} />
       ))}
     </ul>
   )
 }
 
 //NOTE - 각 Todo 항목을 렌더링하는 컴포넌트
-type TodoListItemProps = Todo
-function TodoItem({ id, title, completed }: TodoListItemProps) {
+type TodoListItemProps = Todo & {
+  onDeleteTodo: (id: Todo['id']) => void
+}
+function TodoItem({ id, title, completed, onDeleteTodo }: TodoListItemProps) {
   return (
     <>
       <li style={{ margin: '10px', display: 'flex' }}>
         {title}
         <span style={{ display: 'flex', gap: '10px' }}>
           <button style={{ padding: '0.1em 0.5em', backgroundColor: '#438dee', color: '#fff' }}>완료</button>
-          <button style={{ padding: '0.1em 0.5em', backgroundColor: '#eb2020', color: '#fff' }}>삭제</button>
+          <button onClick={() => onDeleteTodo(id)} style={{ padding: '0.1em 0.5em', backgroundColor: '#eb2020', color: '#fff' }}>
+            삭제
+          </button>
         </span>
       </li>
     </>

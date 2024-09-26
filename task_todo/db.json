@@ -21,8 +21,13 @@
       "completed": false
     },
     {
-      "id": "1bde7290-d88e-4012-a153-16c38adb08d7",
-      "title": "어? 뭐지",
+      "id": "73244933-2e01-4229-83c9-bd10f9480488",
+      "title": "하루",
+      "completed": true
+    },
+    {
+      "id": "9171b442-cb20-429f-9aa9-e512fabf5135",
+      "title": "되세요",
       "completed": false
     }
   ]
