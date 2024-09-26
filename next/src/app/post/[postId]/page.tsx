@@ -1,6 +1,6 @@
 type Props = {
   params: {
-    id: number
+    postId: number
   }
 }
 
@@ -11,7 +11,7 @@ type Props = {
 export default function page({ params }: Props) {
   return (
     <div className="page">
-      <div>ID : {params.id} Page</div>
+      <div>ID : {params.postId} Page</div>
     </div>
   )
 }
