@@ -17,7 +17,7 @@ export default function AdminLayout({
       <nav className="flex gap-2">
         <a href="/">Home</a>
         <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <a href="/business">business</a>
         <a href="/blog">Blog</a>
       </nav>
 
