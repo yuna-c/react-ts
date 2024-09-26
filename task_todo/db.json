@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": "fddc33d3-ac34-4315-8a2a-52e5eaf9c5f6",
+      "title": "보라돌이",
+      "completed": true
+    },
+    {
+      "id": "7b799895-f87c-4866-9b0c-14ec4663197a",
+      "title": "뚜비",
+      "completed": false
+    },
+    {
+      "id": "ac74a752-5078-458c-93dd-1b0b22b0e2be",
+      "title": "나나",
+      "completed": false
+    },
+    {
+      "id": "88b60f1e-d873-4965-946e-32bb7d881892",
+      "title": "뽀",
+      "completed": false
+    }
+  ]
+}
