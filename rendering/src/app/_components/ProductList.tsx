@@ -1,22 +1,27 @@
 'use client'
+import { Product } from '@/type/product'
 import React, { useEffect, useState } from 'react'
-import { Product } from '../page'
-
-const fetchData = async () => {
-  const res = await fetch('http://localhost:4000/products')
-  const data: Product[] = await res.json()
-  console.log(`render`)
-  return data
-}
 
 const ProductList = () => {
+  // const res = await fetch('http://localhost:4000/products', {
+  //   cache: 'no-cache'
+  // })
+  // const data: Product[] = await res.json()
+
+  const [isLoading, setIsLoading] = useState(false)
   const [data, setData] = useState<Product[]>([])
 
   useEffect(() => {
-    console.log('render')
-    fetchData().then(setData)
+    setIsLoading(true)
+    fetch('http://localhost:4000/products')
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data)
+        setIsLoading(false)
+      })
   }, [])
 
+  if (isLoading) return <>Loading...</>
   return (
     <div className="p-8 m-4">
       {data.map((product) => (
