@@ -1,5 +1,5 @@
 // 'use client'
-import { Product } from '@/type/product'
+import { Product } from '@/types/product'
 // import React, { useEffect, useState } from 'react'
 
 const ProductList = async () => {
@@ -8,6 +8,7 @@ const ProductList = async () => {
     cache: 'no-cache'
   })
   const data: Product[] = await res.json()
+  // console.log(data)
 
   // 클라이언트 컴포넌트 로직
   // const [isLoading, setIsLoading] = useState(false)
