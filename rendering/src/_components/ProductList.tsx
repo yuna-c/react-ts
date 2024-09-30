@@ -1,5 +1,6 @@
 // 'use client'
 import { Product } from '@/types/product'
+import Image from 'next/image'
 // import React, { useEffect, useState } from 'react'
 
 const ProductList = async () => {
@@ -30,7 +31,7 @@ const ProductList = async () => {
     <div className="mt-4 ">
       {data.map((product) => (
         <div className="flex border p-4 gap-2 rounded-md" key={product.id}>
-          <img className="rounded-smr" width={150} height={150} src={product.images} alt={product.title} />
+          <Image className="rounded-smr" width={150} height={150} src={product.images} alt={product.title} />
           <div className="flex flex-col justify-between">
             <div>
               <h2 className="text-xl font-bold">{product.title}</h2>

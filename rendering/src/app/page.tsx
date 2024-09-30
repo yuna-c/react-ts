@@ -3,8 +3,8 @@
 // 특정 시간이 지나고 나서 랜더링
 
 import { Suspense } from 'react'
-import NewProductList from './_components/NewProductList'
-import ProductList from './_components/ProductList'
+import NewProductList from '../_components/NewProductList'
+import ProductList from '../_components/ProductList'
 import Loading from './loading'
 
 export default async function Home() {
