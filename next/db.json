@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "next-sparta"
+    },
+    {
+      "id": 2,
+      "title": "TypeScript with React",
+      "author": "next-sparta"
+    }
+  ]
+}
