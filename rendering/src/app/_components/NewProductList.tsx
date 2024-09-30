@@ -9,7 +9,7 @@ const NewProductList = async () => {
   // Product 타입의 필드 중 하나로, 각 제품이 "새 제품"인지 여부를 나타내는 불리언(boolean) 값
   console.log(newData)
 
-  throw new Error('오류!')
+  if (Math.random() > 0.5) throw new Error('오류!')
 
   return (
     <div className="flex gap-2 oveflow-auto">

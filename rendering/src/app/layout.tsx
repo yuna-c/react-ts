@@ -23,7 +23,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  if (Math.random() < 0.1) throw new Error('루트에러')
+  // if (Math.random() < 0.1) throw new Error('루트에러')
 
   return (
     <html lang="en">
