@@ -1,27 +1,30 @@
-'use client'
+// 'use client'
 import { Product } from '@/type/product'
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
 
-const ProductList = () => {
-  // const res = await fetch('http://localhost:4000/products', {
-  //   cache: 'no-cache'
-  // })
-  // const data: Product[] = await res.json()
+const ProductList = async () => {
+  // 서버 사이드 로직
+  const res = await fetch('http://localhost:4000/products', {
+    cache: 'no-cache'
+  })
+  const data: Product[] = await res.json()
 
-  const [isLoading, setIsLoading] = useState(false)
-  const [data, setData] = useState<Product[]>([])
+  // 클라이언트 컴포넌트 로직
+  // const [isLoading, setIsLoading] = useState(false)
+  // const [data, setData] = useState<Product[]>([])
 
-  useEffect(() => {
-    setIsLoading(true)
-    fetch('http://localhost:4000/products')
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data)
-        setIsLoading(false)
-      })
-  }, [])
+  // useEffect(() => {
+  //   setIsLoading(true)
+  //   fetch('http://localhost:4000/products')
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data)
+  //       setIsLoading(false)
+  //     })
+  // }, [])
 
-  if (isLoading) return <>Loading...</>
+  // if (isLoading) return <>Loading...</>
+
   return (
     <div className="p-8 m-4">
       {data.map((product) => (
