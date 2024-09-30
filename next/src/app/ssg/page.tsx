@@ -1,3 +1,10 @@
+import { Post } from '@/types/Post'
+
 export default async function SSGPage() {
-  return <div>page</div>
+  const res = await fetch('http://localhost:4000/posts', {
+    cache: 'force-cache'
+  })
+  const data: Post[] = await res.json()
+
+  return <div>{JSON.stringify(data)}</div>
 }
