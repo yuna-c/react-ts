@@ -1,10 +1,14 @@
 // https://fakestoreapi.com/
-// SSG : 빌드타임에 홈페이지 만들어 줌(정적)
+// SSR : 사용자가 페이지에 접속 시도(요청) 할때 마다 새로 컨텐츠 불러와서 보여주는
+// 패치안에서 캐싱이 되지 않으니까 매번 새로고침 할 때마다 랜더링
 
 export default async function Home() {
-  const res = await fetch('http://localhost:4000/products')
+  const res = await fetch('http://localhost:4000/products', {
+    cache: 'no-store'
+    // cache: 'force-cache' => SSG변경(안쓰면 기본 값으로 force-cache)
+  })
   const data: Product[] = await res.json()
-  console.log(`data`, data)
+  console.log(`render`)
 
   return (
     <div className="p-8 m-4">
