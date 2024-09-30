@@ -27,9 +27,9 @@ const ProductList = async () => {
   // if (isLoading) return <>Loading...</>
 
   return (
-    <div className="p-8 m-4">
+    <div className="mt-4 ">
       {data.map((product) => (
-        <div className="flex border p-4 gap-4 rounded-md" key={product.id}>
+        <div className="flex border p-4 gap-2 rounded-md" key={product.id}>
           <img className="rounded-smr" width={150} height={150} src={product.images} alt={product.title} />
           <div className="flex flex-col justify-between">
             <div>

@@ -9,7 +9,7 @@ import Loading from './loading'
 
 export default async function Home() {
   return (
-    <div className="p-8 m-4">
+    <div className="p-4 !box-border">
       <h1>sparta shop</h1>
       <Suspense fallback={<Loading />}>
         <NewProductList />

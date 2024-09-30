@@ -14,6 +14,12 @@
   }
 }
 
+*,
+*::before,
+*::after {
+  @apply box-border;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
