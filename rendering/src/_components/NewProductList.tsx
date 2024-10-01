@@ -1,5 +1,6 @@
 import { Product } from '@/types/product'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const NewProductList = async () => {
   const res = await fetch('http://localhost:4000/products', {
@@ -7,23 +8,21 @@ const NewProductList = async () => {
   })
   const data: Product[] = await res.json()
   const newData = data.filter((p) => p.isNew)
-  // Product 타입의 필드 중 하나로, 각 제품이 "새 제품"인지 여부를 나타내는 불리언(boolean) 값
-  console.log(newData)
-
-  // if (Math.random() > 0.5) throw new Error('오류!')
 
   return (
-    <div className="flex gap-2 overflow-auto ">
-      <div className="w-max flex gap-2">
+    <div className="w-full flex gap-4 p-4 overflow-x-auto">
+      <div className="flex gap-4">
         {newData.map((product) => (
-          <div className="flex gap-2 w-[250px] border rounded-sm" key={product.id}>
-            <Image className="rounded-sm object-scale-down" width={80} height={80} src={product.images} alt={product.title} />
-            <div className="flex flex-col justify-between">
-              <div>
-                <h2 className="text-md font-medium">{product.title}</h2>
-                <p className="mt-4 font-thin">{product.price.amount}$</p>
+          <div key={product.id} className="w-[250px] border border-gray-300 p-4 rounded-md flex-shrink-0">
+            <Link href={`/products/${product.id}`} className="block">
+              <div className="flex gap-4">
+                <Image className="rounded-sm object-cover" width={80} height={80} src={product.images} alt={product.title} />
+                <div className="flex flex-col justify-between">
+                  <h2 className="text-md font-medium">{product.title}</h2>
+                  <p className="mt-4 font-thin">{product.price.amount}$</p>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         ))}
       </div>
