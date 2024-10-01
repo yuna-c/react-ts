@@ -9,3 +9,6 @@
 
 // yarn add @hookform/resolvers
 // https://www.npmjs.com/package/@hookform/resolvers
+
+// yarn add @tanstack/react-query
+// yarn add @tanstack/react-query-devtools

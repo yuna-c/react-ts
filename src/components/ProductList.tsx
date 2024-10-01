@@ -1,12 +1,30 @@
+'use client'
 import { Product } from '@/type/product'
+import { useQuery } from '@tanstack/react-query'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const ProductList = ({ products }: { products: Product[] }) => {
+const ProductList = () => {
+  const {
+    data: products,
+    isLoading,
+    isFetching
+  } = useQuery({
+    queryKey: ['products'],
+    queryFn: async () => {
+      const res = await fetch('http://localhost:4000/products')
+      const data: Product[] = await res.json()
+      return data
+    },
+    staleTime: 3000,
+    gcTime: 5000
+  })
+
+  if (isLoading) <>Loading...</>
   return (
     <section className="flex flex-col gap-4">
       <h2 className="text-lg font-bold">Products</h2>
-      {products.map((product) => (
+      {products?.map((product) => (
         <div className="flex border gap-4 rounded-md" key={product.id}>
           <div className="w-[150px] h-[200px] flex-shrink-0">
             <Image className="rounded-sm h-full w-full object-cover" width={150} height={150} src={product.images} alt={product.title} />
