@@ -32,6 +32,8 @@ function getQueryClient() {
   }
 }
 
+//   => children은 어떻게 된거야? children 프롭스로 이 클라이언트 안에서 서버 컴포넌트 트리를 칠드런으로 받으면 저기만 클라이언트 컴포넌트로 작동하고
+//   => 칠드런에 들어가 있는 경우는 다시 컴포넌트 내에서 use client 선언 전까지는 안에서는 서버컴포
 export default function Providers({ children }: { children: React.ReactNode }) {
   // NOTE: Avoid useState when initializing the query client if you don't
   //       have a suspense boundary between this and the code that may

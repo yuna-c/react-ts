@@ -14,7 +14,7 @@ const ProductList = () => {
     queryFn: async () => {
       const res = await fetch('http://localhost:4000/products')
       const data: Product[] = await res.json()
-      return data
+      return { data }
     },
     staleTime: 3000,
     gcTime: 5000
@@ -25,7 +25,7 @@ const ProductList = () => {
   return (
     <section className="flex flex-col gap-4">
       <h2 className="text-lg font-bold">Products</h2>
-      {products?.map((product) => (
+      {products?.data?.map((product) => (
         <div className="flex border gap-4 rounded-md" key={product.id}>
           <div className="w-[150px] h-[200px] flex-shrink-0">
             <Image className="rounded-sm h-full w-full object-cover" width={150} height={150} src={product.images} alt={product.title} />

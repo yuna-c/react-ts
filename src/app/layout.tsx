@@ -19,6 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* use client 하위의 요소들은 client로 동작=> 서버로직 아니지 않아?
+          => 100프로 클라이언트 사이드 랜더링 아님
+          => 클라이언트 컴포넌트는 무조건 서버에서 프리랜더링 과정을 거친다
+          => use client로 감싸도 어느정도 정적 컨텐츠가 같이 내려옴
+          => 작성된 곳 안에서 리액트 훅 온클릭 같은 것들만 js번들로 자동으로 분리되서 내려줌
+          => children은 어떻게 된거야? children 프롭스로 이 클라이언트 안에서 서버 컴포넌트 트리를 칠드런으로 받으면 저기만 클라이언트 컴포넌트로 작동하고
+          => 칠드런에 들어가 있는 경우는 다시 컴포넌트 내에서 use client 선언 전까지는 안에서는 서버컴포넌트로 동작한다
+        */}
         <Providers>{children}</Providers>
       </body>
     </html>
