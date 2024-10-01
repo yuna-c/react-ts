@@ -3,17 +3,29 @@ import Logo from '/public/assets/logo.png'
 import Link from 'next/link'
 import { CartProvider } from '@/components/providers/ZustandProvider'
 import CartButton from '@/components/_/CartButton'
+import { Product } from '@/type/product'
 
-export default function Layout({
+type GetCartProducts = {
+  id: string
+  product: Product
+  quantity: number
+}
+export default async function Layout({
   children,
   modal
 }: Readonly<{
   children: React.ReactNode
   modal: React.ReactNode
 }>) {
+  const res = await fetch('http://localhost:4000/carts', {
+    cache: 'no-store'
+  })
+  const data: GetCartProducts[] = await res.json()
+
   return (
     // 하단 부분 전역 상태 관리 가능
-    <CartProvider products={[]}>
+    <CartProvider products={data.map((p) => ({ ...p.product, quantity: p.quantity }))}>
+      {/* product, quantity 합쳐진 상태로 넣어줌 */}
       <header className="relative flex h-[60px] justify-center items-center">
         <Link href={'/'}>
           <Image height={40} src={Logo} alt="logo"></Image>
