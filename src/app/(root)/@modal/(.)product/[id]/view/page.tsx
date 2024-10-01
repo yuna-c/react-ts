@@ -1,5 +1,6 @@
 import { Product } from '@/type/product'
 import Image from 'next/image'
+import ReloadButton from './reload-button'
 
 type Props = {
   params: {
@@ -20,10 +21,15 @@ const ProductModal = async ({ params }: Props) => {
         <Image src={data.images} alt={data.title} width={100} height={100} className="w-[100px] h-[100px] object-cover"></Image>
         <div className="text-lg font-bold ">{data.title}</div>
         <div className="line-clamp-3">{data.description}</div>
-        <button className="bg-gray-800 text-white px-4 py-2 rounded-md">View Detail</button>
+        <ReloadButton />
       </div>
     </div>
   )
 }
 
 export default ProductModal
+
+// const ProductModal = () => {
+//   return <div>모달</div>
+// }
+// export default ProductModal
