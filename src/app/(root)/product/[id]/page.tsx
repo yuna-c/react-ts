@@ -28,6 +28,7 @@ const fetchProduct = async (id: number) => {
   return data
 }
 
+// 요부분
 export const generateMetadata = async ({ params }: Props) => {
   const id = parseInt(params.id, 10)
   const data = await fetchProduct(id)
