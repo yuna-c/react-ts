@@ -1,6 +1,18 @@
 'use client'
 // yarn add react-hook-form
+// https://react-hook-form.com/
+
+// yarn add zod
+// https://zod.dev/
 import { FieldValues, useForm } from 'react-hook-form'
+import { z } from 'zod' // 스키마 만들기
+
+// 타입 검증 가능 : 타입스크립트는 컴파일타임에 모두 자바스크립트로 변경
+// 조드는 내부적으로 여러가지 타입 검사 있어서 런타임에도 (js)변경 이후에도 타입 에러를 반환
+const signInSchema = z.object({
+  email: z.string().email({ message: 'invalid email' }), // 이것 때문에 유효성 검사 없이도 런타임에도 잘 작성 가능
+  password: z.string()
+})
 
 const SignInForm = () => {
   console.log('render!')
@@ -20,6 +32,7 @@ const SignInForm = () => {
     // dirtyFields, 디폴트에 넣어둔 값이 변경 됬는지 안됬는지(mode)
     // disabled,
     // errors
+    console.log(signInSchema.parse(value)) // 파스 통과시 벨류 반환
   }
 
   console.log('error:', formState.errors)
