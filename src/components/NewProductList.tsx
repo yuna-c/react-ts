@@ -19,7 +19,7 @@ const NewProductList = async () => {
       <div className="w-full overflow-auto">
         <div className="flex gap-4 w-max">
           {data.map((product) => (
-            <Link key={product.id} className="w-[120px] flex flex-col border gap-4 rounded-md" href={`/product/${product.id}`}>
+            <Link prefetch={false} key={product.id} className="w-[120px] flex flex-col border gap-4 rounded-md" href={`/product/${product.id}`}>
               <Image className="rounded-sm object-cover w-[120px] h-[120px]" width={120} height={120} src={product.images} alt={product.title} />
               <div className="flex flex-col p-4 justify-between">
                 <div>
