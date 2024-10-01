@@ -9,6 +9,7 @@ export interface CartProps {
 
 export interface CartState extends CartProps {
   addProduct: (product: CartProduct) => void
+  // local에서 삭제 되었기 때문에 useMutation을 통해 delete를 해 주어야 서버 데이터까지 모두 날아감
   removeProduct: (id: number) => void
 }
 
@@ -27,6 +28,7 @@ export const createCartStore = (initProps?: Partial<CartProps>) => {
         products: [...state.products, product]
       })),
 
+    // local에서 삭제 되었기 때문에 useMutation을 통해 delete를 해 주어야 서버 데이터까지 모두 날아감
     removeProduct: (id: number) => {
       set((state) => ({
         products: state.products.filter((p) => p.id !== id)

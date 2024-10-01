@@ -8,6 +8,7 @@ const CartPage = () => {
   // const { data: products }: { data: Product[] } = await getProducts()
   const { products, removeProduct } = useCartContext((state) => state)
 
+  // local에서 삭제 되었기 때문에 useMutation을 통해 delete를 해 주어야 서버 데이터까지 모두 날아감
   const handleRemoveItem = (id: number) => {
     removeProduct(id)
   }
@@ -24,12 +25,7 @@ const CartPage = () => {
                 {product.title} - ${product.price.amount}
               </div>
               <div>{product.quantity}</div>
-              <button
-                onClick={() => 
-                  handleRemoveItem(product.id)
-                }
-                className="bg-gray-800 text-white px-4 py-2 rounded-md"
-              >
+              <button onClick={() => handleRemoveItem(product.id)} className="bg-gray-800 text-white px-4 py-2 rounded-md">
                 Remove
               </button>
             </div>
