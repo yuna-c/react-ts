@@ -8,7 +8,7 @@ const CartButton = () => {
   return (
     <Link href={'/cart'}>
       <button className="bg-gray-800 text-white px-4 py-2 rounded-md">
-        Cart
+        Cart{' '}
         <span>{products.length}</span>
       </button>
     </Link>

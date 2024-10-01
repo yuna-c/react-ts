@@ -3,6 +3,7 @@ import { useCount } from '@/hook/useCount'
 import { Product } from '@/type/product'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import Image from 'next/image'
+import { useCartContext } from '../providers/ZustandProvider'
 
 type Props = {
   product: Product
@@ -11,8 +12,9 @@ type Props = {
 const ProductDetail = ({ product }: Props) => {
   const { count, onPlus, onMinus } = useCount()
   const queryClient = useQueryClient()
+  const addProduct = useCartContext((state) => state.addProduct)
 
-  const { mutate } = useMutation({
+  const { mutateAsync } = useMutation({
     mutationFn: async () => {
       return await fetch('http://localhost:4000/carts', {
         method: 'POST',
@@ -37,7 +39,11 @@ const ProductDetail = ({ product }: Props) => {
 
   const handleAddCart = async () => {
     if (count > 1) {
-      mutate()
+      await mutateAsync()
+      addProduct({
+        ...product,
+        quantity: count
+      })
     }
   }
 
