@@ -1,11 +1,27 @@
+'use client'
+import { getProducts } from '@/sever-action'
 import { Product } from '@/types/product'
 import Image from 'next/image'
+import React, { useEffect, useState } from 'react'
 
-const ProductList = async () => {
-  const res = await fetch('http://localhost:4000/products', {
-    cache: 'no-cache'
-  })
-  const data: Product[] = await res.json()
+const ProductList = () => {
+  // const res = await fetch('http://localhost:4000/products', {
+  //   cache: 'no-cache'
+  // })
+  // const { data } = await getProducts()
+
+  const [isLoading, setIsLoading] = useState(false)
+  const [data, setData] = useState<Product[]>([])
+
+  useEffect(() => {
+    setIsLoading(true)
+    getProducts().then(({ data }) => {
+      setData(data)
+      setIsLoading(false)
+    })
+  }, [])
+
+  if (isLoading) return <>Loading...</>
 
   return (
     <div className="mt-4">
