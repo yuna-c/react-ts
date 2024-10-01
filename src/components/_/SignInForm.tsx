@@ -49,7 +49,7 @@ const SignInForm = () => {
     // errors
     // console.log(signInSchema.parse(value)) // 파스 통과시 벨류 반환
 
-    const res = await fetch(`http://localhost:8000/signIn`, {
+    const res = await fetch(`/api/sign-in`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
