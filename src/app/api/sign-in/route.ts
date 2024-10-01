@@ -13,7 +13,8 @@ export async function POST(request: Request) {
     cache: 'no-store', //패치캐시 안생기게
     body: JSON.stringify({
       ...payload
-    })
+    }),
+    credentials: 'include' // 쿠키를 포함하여 요청
   })
 
   const data = await res.json()
@@ -26,7 +27,8 @@ export async function POST(request: Request) {
   cookieStore.set('accessToken', data.accessToken, {
     httpOnly: true,
     // secure: true, // HTTPS 환경일 때만 사용
-    path: '/' // 모든 경로에서 유효하도록 설정
+    path: '/', // 모든 경로에서 유효하도록 설정
+    maxAge: 60 * 60 * 24 // 쿠키 유효 기간 설정 (예: 1일)
   })
 
   return NextResponse.json({
