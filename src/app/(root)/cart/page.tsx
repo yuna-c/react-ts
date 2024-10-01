@@ -6,7 +6,11 @@ import { useCartContext } from '@/components/providers/ZustandProvider'
 
 const CartPage = () => {
   // const { data: products }: { data: Product[] } = await getProducts()
-  const { products } = useCartContext((state) => state)
+  const { products, removeProduct } = useCartContext((state) => state)
+
+  const handleRemoveItem = (id: number) => {
+    removeProduct(id)
+  }
 
   return (
     <section className="flex flex-col items-center p-5 w-full justify-center max-w-screen-lg m-auto min-h-screen py-2">
@@ -20,7 +24,14 @@ const CartPage = () => {
                 {product.title} - ${product.price.amount}
               </div>
               <div>{product.quantity}</div>
-              <button className="bg-gray-800 text-white px-4 py-2 rounded-md">Remove</button>
+              <button
+                onClick={() => 
+                  handleRemoveItem(product.id)
+                }
+                className="bg-gray-800 text-white px-4 py-2 rounded-md"
+              >
+                Remove
+              </button>
             </div>
           ))}
 

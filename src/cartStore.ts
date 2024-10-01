@@ -9,6 +9,7 @@ export interface CartProps {
 
 export interface CartState extends CartProps {
   addProduct: (product: CartProduct) => void
+  removeProduct: (id: number) => void
 }
 
 export type CartStore = ReturnType<typeof createCartStore>
@@ -24,6 +25,12 @@ export const createCartStore = (initProps?: Partial<CartProps>) => {
     addProduct: (product: CartProduct) =>
       set((state) => ({
         products: [...state.products, product]
+      })),
+
+    removeProduct: (id: number) => {
+      set((state) => ({
+        products: state.products.filter((p) => p.id !== id)
       }))
+    }
   }))
 }
