@@ -14,8 +14,9 @@ export async function getProducts() {
 }
 
 // force-cache 되어있는 캐시 날리기
-export async function rePath() {
-  revalidatePath('/')
+export async function rePath(id: number) {
+  // 특정 프로덕트만 리벨리데이트 하기
+  revalidatePath(`/product/${12}`)
 }
 
 export async function reTag() {

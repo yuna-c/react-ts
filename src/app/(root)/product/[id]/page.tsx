@@ -8,21 +8,17 @@ type Props = {
   }
 }
 
-export const generateStaticParams = () => {
-  return [
-    {
-      id: '1'
-    },
-    {
-      id: '2'
-    },
-    {
-      id: '3'
-    },
-    {
-      id: '4'
+export const generateStaticParams = async () => {
+  const res = await fetch('http://localhost:4001/products', {
+    cache: 'force-cache',
+    next: {
+      tags: ['products']
     }
-  ]
+  })
+
+  const data: Product[] = await res.json()
+
+  return data.map((p) => ({ id: p.id.toString() }))
 }
 
 const fetchProduct = async (id: number) => {
