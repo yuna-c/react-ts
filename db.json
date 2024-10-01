@@ -11,7 +11,9 @@
       "options": [
         {
           "name": "Size",
-          "values": ["One Size"]
+          "values": [
+            "One Size"
+          ]
         }
       ],
       "price": {
@@ -23,7 +25,10 @@
         "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
         "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
       },
-      "tags": ["men's clothing", "backpack"]
+      "tags": [
+        "men's clothing",
+        "backpack"
+      ]
     },
     {
       "id": 2,
@@ -36,7 +41,12 @@
       "options": [
         {
           "name": "Size",
-          "values": ["S", "M", "L", "XL"]
+          "values": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ]
         }
       ],
       "price": {
@@ -48,7 +58,10 @@
         "title": "Mens Casual Premium Slim Fit T-Shirts",
         "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing."
       },
-      "tags": ["men's clothing", "t-shirt"]
+      "tags": [
+        "men's clothing",
+        "t-shirt"
+      ]
     },
     {
       "id": 3,
@@ -61,7 +74,12 @@
       "options": [
         {
           "name": "Size",
-          "values": ["S", "M", "L", "XL"]
+          "values": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ]
         }
       ],
       "price": {
@@ -73,7 +91,10 @@
         "title": "Mens Cotton Jacket",
         "description": "Great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions."
       },
-      "tags": ["men's clothing", "jacket"]
+      "tags": [
+        "men's clothing",
+        "jacket"
+      ]
     },
     {
       "id": 4,
@@ -86,7 +107,12 @@
       "options": [
         {
           "name": "Size",
-          "values": ["S", "M", "L", "XL"]
+          "values": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ]
         }
       ],
       "price": {
@@ -98,7 +124,10 @@
         "title": "Mens Casual Slim Fit",
         "description": "The color could be slightly different between on the screen and in practice."
       },
-      "tags": ["men's clothing", "slim fit"]
+      "tags": [
+        "men's clothing",
+        "slim fit"
+      ]
     },
     {
       "id": 5,
@@ -111,7 +140,9 @@
       "options": [
         {
           "name": "Size",
-          "values": ["One Size"]
+          "values": [
+            "One Size"
+          ]
         }
       ],
       "price": {
@@ -123,7 +154,10 @@
         "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
         "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon."
       },
-      "tags": ["jewelery", "bracelet"]
+      "tags": [
+        "jewelery",
+        "bracelet"
+      ]
     },
     {
       "id": 6,
@@ -136,7 +170,9 @@
       "options": [
         {
           "name": "Size",
-          "values": ["One Size"]
+          "values": [
+            "One Size"
+          ]
         }
       ],
       "price": {
@@ -148,7 +184,10 @@
         "title": "Solid Gold Petite Micropave",
         "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days."
       },
-      "tags": ["jewelery", "micropave"]
+      "tags": [
+        "jewelery",
+        "micropave"
+      ]
     },
     {
       "id": 7,
@@ -161,7 +200,9 @@
       "options": [
         {
           "name": "Size",
-          "values": ["One Size"]
+          "values": [
+            "One Size"
+          ]
         }
       ],
       "price": {
@@ -173,7 +214,10 @@
         "title": "White Gold Plated Princess",
         "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her."
       },
-      "tags": ["jewelery", "ring"]
+      "tags": [
+        "jewelery",
+        "ring"
+      ]
     },
     {
       "id": 8,
@@ -186,7 +230,9 @@
       "options": [
         {
           "name": "Size",
-          "values": ["One Size"]
+          "values": [
+            "One Size"
+          ]
         }
       ],
       "price": {
@@ -198,7 +244,10 @@
         "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
         "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel"
       },
-      "tags": ["jewelery", "earrings"]
+      "tags": [
+        "jewelery",
+        "earrings"
+      ]
     },
     {
       "id": 9,
@@ -211,7 +260,9 @@
       "options": [
         {
           "name": "Size",
-          "values": ["One Size"]
+          "values": [
+            "One Size"
+          ]
         }
       ],
       "price": {
@@ -223,7 +274,10 @@
         "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0",
         "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity"
       },
-      "tags": ["electronics", "hard drive"]
+      "tags": [
+        "electronics",
+        "hard drive"
+      ]
     },
     {
       "id": 10,
@@ -236,7 +290,9 @@
       "options": [
         {
           "name": "Size",
-          "values": ["One Size"]
+          "values": [
+            "One Size"
+          ]
         }
       ],
       "price": {
@@ -248,7 +304,10 @@
         "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
         "description": "Easy upgrade for faster boot up, shutdown, application load and response."
       },
-      "tags": ["electronics", "SSD"]
+      "tags": [
+        "electronics",
+        "SSD"
+      ]
     },
     {
       "id": 11,
@@ -261,7 +320,9 @@
       "options": [
         {
           "name": "Size",
-          "values": ["One Size"]
+          "values": [
+            "One Size"
+          ]
         }
       ],
       "price": {
@@ -273,7 +334,10 @@
         "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
         "description": "3D NAND flash are applied to deliver high transfer speeds."
       },
-      "tags": ["electronics", "SSD"]
+      "tags": [
+        "electronics",
+        "SSD"
+      ]
     },
     {
       "id": 12,
@@ -286,7 +350,9 @@
       "options": [
         {
           "name": "Size",
-          "values": ["One Size"]
+          "values": [
+            "One Size"
+          ]
         }
       ],
       "price": {
@@ -298,7 +364,10 @@
         "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
         "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup."
       },
-      "tags": ["electronics", "hard drive"]
+      "tags": [
+        "electronics",
+        "hard drive"
+      ]
     },
     {
       "id": 13,
@@ -311,7 +380,9 @@
       "options": [
         {
           "name": "Size",
-          "values": ["One Size"]
+          "values": [
+            "One Size"
+          ]
         }
       ],
       "price": {
@@ -323,7 +394,10 @@
         "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
         "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology."
       },
-      "tags": ["electronics", "monitor"]
+      "tags": [
+        "electronics",
+        "monitor"
+      ]
     },
     {
       "id": 14,
@@ -336,7 +410,9 @@
       "options": [
         {
           "name": "Size",
-          "values": ["One Size"]
+          "values": [
+            "One Size"
+          ]
         }
       ],
       "price": {
@@ -348,7 +424,10 @@
         "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED",
         "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side."
       },
-      "tags": ["electronics", "gaming monitor"]
+      "tags": [
+        "electronics",
+        "gaming monitor"
+      ]
     },
     {
       "id": 15,
@@ -361,7 +440,12 @@
       "options": [
         {
           "name": "Size",
-          "values": ["S", "M", "L", "XL"]
+          "values": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ]
         }
       ],
       "price": {
@@ -373,7 +457,10 @@
         "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
         "description": "3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed."
       },
-      "tags": ["women's clothing", "jacket"]
+      "tags": [
+        "women's clothing",
+        "jacket"
+      ]
     },
     {
       "id": 16,
@@ -386,7 +473,12 @@
       "options": [
         {
           "name": "Size",
-          "values": ["S", "M", "L", "XL"]
+          "values": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ]
         }
       ],
       "price": {
@@ -398,7 +490,10 @@
         "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
         "description": "Faux leather material for style and comfort."
       },
-      "tags": ["women's clothing", "jacket"]
+      "tags": [
+        "women's clothing",
+        "jacket"
+      ]
     },
     {
       "id": 17,
@@ -411,7 +506,12 @@
       "options": [
         {
           "name": "Size",
-          "values": ["S", "M", "L", "XL"]
+          "values": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ]
         }
       ],
       "price": {
@@ -423,7 +523,10 @@
         "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
         "description": "Lightweight perfet for trip or casual wear."
       },
-      "tags": ["women's clothing", "raincoat"]
+      "tags": [
+        "women's clothing",
+        "raincoat"
+      ]
     },
     {
       "id": 18,
@@ -436,7 +539,12 @@
       "options": [
         {
           "name": "Size",
-          "values": ["S", "M", "L", "XL"]
+          "values": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ]
         }
       ],
       "price": {
@@ -448,7 +556,10 @@
         "title": "MBJ Women's Solid Short Sleeve Boat Neck V",
         "description": "Lightweight fabric with great stretch for comfort."
       },
-      "tags": ["women's clothing", "t-shirt"]
+      "tags": [
+        "women's clothing",
+        "t-shirt"
+      ]
     },
     {
       "id": 19,
@@ -461,7 +572,12 @@
       "options": [
         {
           "name": "Size",
-          "values": ["S", "M", "L", "XL"]
+          "values": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ]
         }
       ],
       "price": {
@@ -473,7 +589,10 @@
         "title": "Opna Women's Short Sleeve Moisture",
         "description": "Lightweight, roomy and highly breathable with moisture wicking fabric."
       },
-      "tags": ["women's clothing", "t-shirt"]
+      "tags": [
+        "women's clothing",
+        "t-shirt"
+      ]
     },
     {
       "id": 20,
@@ -486,7 +605,12 @@
       "options": [
         {
           "name": "Size",
-          "values": ["S", "M", "L", "XL"]
+          "values": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ]
         }
       ],
       "price": {
@@ -498,8 +622,216 @@
         "title": "DANVOUY Womens T Shirt Casual Cotton Short",
         "description": "Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees."
       },
-      "tags": ["women's clothing", "t-shirt"]
+      "tags": [
+        "women's clothing",
+        "t-shirt"
+      ]
     }
   ],
-  "cart": []
+  "carts": [
+    {
+      "id": "dd29a07e-b8c1-434c-b7df-fa55377809e9",
+      "product": {
+        "id": 1,
+        "handle": "fjallraven-foldsack-no-1-backpack",
+        "availableForSale": true,
+        "isNew": false,
+        "title": "포스캐시 - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        "descriptionHtml": "<p>Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday</p>",
+        "options": [
+          {
+            "name": "Size",
+            "values": [
+              "One Size"
+            ]
+          }
+        ],
+        "price": {
+          "amount": "109.95",
+          "currencyCode": "USD"
+        },
+        "images": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+        "seo": {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
+        },
+        "tags": [
+          "men's clothing",
+          "backpack"
+        ]
+      },
+      "quantity": 5
+    },
+    {
+      "id": "1dd02734-c354-483e-808d-c037de987c58",
+      "product": {
+        "id": 1,
+        "handle": "fjallraven-foldsack-no-1-backpack",
+        "availableForSale": true,
+        "isNew": false,
+        "title": "포스캐시 - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        "descriptionHtml": "<p>Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday</p>",
+        "options": [
+          {
+            "name": "Size",
+            "values": [
+              "One Size"
+            ]
+          }
+        ],
+        "price": {
+          "amount": "109.95",
+          "currencyCode": "USD"
+        },
+        "images": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+        "seo": {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
+        },
+        "tags": [
+          "men's clothing",
+          "backpack"
+        ]
+      },
+      "quantity": 5
+    },
+    {
+      "id": "9272ae08-665f-4e9c-bf64-0b626ed0618f",
+      "product": {
+        "id": 1,
+        "handle": "fjallraven-foldsack-no-1-backpack",
+        "availableForSale": true,
+        "isNew": false,
+        "title": "포스캐시 - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        "descriptionHtml": "<p>Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday</p>",
+        "options": [
+          {
+            "name": "Size",
+            "values": [
+              "One Size"
+            ]
+          }
+        ],
+        "price": {
+          "amount": "109.95",
+          "currencyCode": "USD"
+        },
+        "images": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+        "seo": {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
+        },
+        "tags": [
+          "men's clothing",
+          "backpack"
+        ]
+      },
+      "quantity": 5
+    },
+    {
+      "id": "314b0f86-dc4c-4d30-9514-cce786e68c2e",
+      "product": {
+        "id": 1,
+        "handle": "fjallraven-foldsack-no-1-backpack",
+        "availableForSale": true,
+        "isNew": false,
+        "title": "포스캐시 - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        "descriptionHtml": "<p>Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday</p>",
+        "options": [
+          {
+            "name": "Size",
+            "values": [
+              "One Size"
+            ]
+          }
+        ],
+        "price": {
+          "amount": "109.95",
+          "currencyCode": "USD"
+        },
+        "images": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+        "seo": {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
+        },
+        "tags": [
+          "men's clothing",
+          "backpack"
+        ]
+      },
+      "quantity": 5
+    },
+    {
+      "id": "fc4093e3-83d6-429c-aff7-d580e9fc5836",
+      "product": {
+        "id": 1,
+        "handle": "fjallraven-foldsack-no-1-backpack",
+        "availableForSale": true,
+        "isNew": false,
+        "title": "포스캐시 - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        "descriptionHtml": "<p>Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday</p>",
+        "options": [
+          {
+            "name": "Size",
+            "values": [
+              "One Size"
+            ]
+          }
+        ],
+        "price": {
+          "amount": "109.95",
+          "currencyCode": "USD"
+        },
+        "images": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+        "seo": {
+          "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
+        },
+        "tags": [
+          "men's clothing",
+          "backpack"
+        ]
+      },
+      "quantity": 4
+    },
+    {
+      "id": "0d43a30e-a694-4911-86fb-7df47fa4d949",
+      "product": {
+        "id": 7,
+        "handle": "white-gold-plated-princess",
+        "availableForSale": true,
+        "isNew": true,
+        "title": "White Gold Plated Princess",
+        "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+        "descriptionHtml": "<p>Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...</p>",
+        "options": [
+          {
+            "name": "Size",
+            "values": [
+              "One Size"
+            ]
+          }
+        ],
+        "price": {
+          "amount": "9.99",
+          "currencyCode": "USD"
+        },
+        "images": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+        "seo": {
+          "title": "White Gold Plated Princess",
+          "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her."
+        },
+        "tags": [
+          "jewelery",
+          "ring"
+        ]
+      },
+      "quantity": 4
+    }
+  ]
 }

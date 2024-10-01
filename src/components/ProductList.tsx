@@ -21,6 +21,7 @@ const ProductList = () => {
   })
 
   if (isLoading) <>Loading...</>
+
   return (
     <section className="flex flex-col gap-4">
       <h2 className="text-lg font-bold">Products</h2>
