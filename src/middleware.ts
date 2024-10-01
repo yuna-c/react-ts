@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server'
 export async function middleware(request: NextRequest) {
   //TODO - 미들웨어에서 판단하기
   // console.log(request.cookies)
-  console.log(request.cookies.get('accessToken')?.value)
+  // console.log(request.cookies.get('accessToken')?.value)
 
   //TODO - 인터셉트 가능
   console.log(request.headers)
@@ -18,7 +18,8 @@ export async function middleware(request: NextRequest) {
   //TODO - 검증을 위한 비동기 함수를 사용해도 함수는 서버에서 비동기로 동작 하기 때문에 원활히 작동
   // await fetch('')
 
-  const isLogin = false
+  // 로그인 값 안에 토큰이 있으면 로그인이 된것
+  const isLogin = !!request.cookies.get('accessToken')?.value
 
   if (!isLogin && request.nextUrl.pathname.includes('/cart')) {
     //TODO - if문 안의 특정 조건을 활용해서 따로 작성 하면 그대로 동작
