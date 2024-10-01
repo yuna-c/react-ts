@@ -19,10 +19,10 @@ const signInSchema = z.object({
     .string({ message: '이메일 필수' })
     .email({ message: 'invalid email' }) // 이것 때문에 유효성 검사 없이도 런타임에도 잘 작성 가능
     .min(2, {
-      message: '이메일 필수 길이'
+      message: '이메일 최소 길이는 2자입니다.'
     })
-    .max(10, {
-      message: 'to long'
+    .max(20, {
+      message: '이메일 최대 길이는 20자입니다.'
     }),
   password: z.string()
 })
@@ -39,7 +39,7 @@ const SignInForm = () => {
     resolver: zodResolver(signInSchema)
   })
 
-  const onSubmit = (value: FieldValues) => {
+  const onSubmit = async (value: FieldValues) => {
     console.log(value)
     console.log('formState:', formState)
     // formState 객체
@@ -48,6 +48,19 @@ const SignInForm = () => {
     // disabled,
     // errors
     // console.log(signInSchema.parse(value)) // 파스 통과시 벨류 반환
+
+    const res = await fetch(`http://localhost:8000/signIn`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        ...value
+      })
+    })
+
+    const data = await res.json()
+    console.log(data)
   }
 
   // console.log('error:', formState.errors)
