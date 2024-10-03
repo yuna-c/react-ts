@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const NewProductList = async () => {
   //dynamic
-  const res = await fetch('http://localhost:4001/products', {
+  const res = await fetch('http://localhost:4000/products', {
     cache: 'force-cache',
     next: {
       tags: ['products']
